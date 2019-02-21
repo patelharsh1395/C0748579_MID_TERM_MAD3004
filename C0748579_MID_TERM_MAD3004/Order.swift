@@ -9,22 +9,26 @@
 import Foundation
 
 
-class Order
+class Order : IDisplay
 {
+    
+    
     var o_id : Int?
     var date = Date()
     var products = [Int:Product]()
     var total : Float?
-    var billingAmt : Float
+    private var billingAmt : String
     {
         get{
             var temp : Float = 0.0
             for  (quantity,product) in  products
             {
                 temp = temp  +  (Float(quantity) * (product.quantity!))
-                print("\(String(describing: product.p_name!))   quantity \(quantity)  price : \(Float(quantity) * (product.quantity!)) ")
+                print("\(String(describing: product.p_name!))      original_price : $\(product.price!)  quantity \(quantity)  price : $\(Float(quantity) * (product.quantity!)) ")
             }
-            return temp
+            let tax = (temp*13)/100
+            print("TAX 13% HST : \(temp)")
+            return  "Total billing amount :  \(temp+tax) "
         }
     }
     
@@ -50,7 +54,11 @@ class Order
 //        return billingAmt
 //    }
     
-    
+    func display( )  {
+        print("order placed on : ", self.date)
+        print(billingAmt)
+        
+    }
     
     
 }

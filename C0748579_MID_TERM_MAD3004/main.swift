@@ -24,6 +24,11 @@ var onion = Product(p_id: 5, p_name: "onion", price: 4, quantity: 2, manufacture
 var orange = Product(p_id: 6, p_name: "orange", price: 4, quantity: 1,  manufacturer : TropicalFarmers )
 
 
+
+
+
+
+
 var order1 = Order( o_id: 1)
 order1.productAdd(products: Tomato,quantity_order:  2)
 order1.productAdd(products: Banana,quantity_order:  3)
@@ -45,7 +50,7 @@ order3.productAdd(products: onion,quantity_order: 4)
 order3.productAdd(products: Carrot,quantity_order:  5)
 
 
-print("total" ,order3.billingAmt)
+order3.display()
 
 
 var order_dictionary = [Int : Order ]()
@@ -54,6 +59,10 @@ order_dictionary.updateValue(order2 , forKey: order2.o_id!)
 order_dictionary.updateValue(order3 , forKey: order3.o_id!)
 
 
+for ( _ , order) in order_dictionary
+{
+    print( order.display() , "\n\n\n")
+}
 
 
 

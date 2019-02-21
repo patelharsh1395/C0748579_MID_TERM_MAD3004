@@ -8,13 +8,20 @@
 
 import Foundation
 
-print("Hello, World!")
+
 
 var farmland = Manufacturer(id: 1 , name: "farmland")
 var NewHarvest = Manufacturer(id: 2 , name: "NewHarvest")
 var TropicalFarmers = Manufacturer(id: 3 , name: "TropicalFarmers")
 
+print("Manufacturers information : ")
+var manufacturer_arr = [farmland,NewHarvest,TropicalFarmers]
+for i in manufacturer_arr
+{
+    i.display()
+}
 
+print("\n\n\n")
 
 var Tomato = Product(p_id: 1, p_name: "Tomato", price: 2.2, quantity: 1.5,  manufacturer :  farmland  )
 var Banana = Product(p_id: 2, p_name: "Banana", price: 1.2, quantity: 1.5,  manufacturer : TropicalFarmers)
@@ -24,10 +31,15 @@ var onion = Product(p_id: 5, p_name: "onion", price: 4, quantity: 2, manufacture
 var orange = Product(p_id: 6, p_name: "orange", price: 4, quantity: 1,  manufacturer : TropicalFarmers )
 
 
+var product_arr = [Tomato,Banana,Carrot,radish,onion,orange]
 
+print(" products information : ")
+for i in product_arr
+{
+    i.display()
+}
 
-
-
+print("\n\n\n")
 
 var order1 = Order( o_id: 1)
 order1.productAdd(products: Tomato,quantity_order:  2)
@@ -50,7 +62,7 @@ order3.productAdd(products: onion,quantity_order: 4)
 order3.productAdd(products: Carrot,quantity_order:  5)
 
 
-order3.display()
+
 
 
 var order_dictionary = [Int : Order ]()
@@ -63,6 +75,7 @@ for ( _ , order) in order_dictionary
 {
     print( order.display() , "\n\n\n")
 }
+
 
 
 

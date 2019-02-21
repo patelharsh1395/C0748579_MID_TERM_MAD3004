@@ -14,7 +14,7 @@ class Order : IDisplay
     
     
     var o_id : Int?
-    var date = Date()
+    var date =  Date()
     var products = [Int:Product]()
     var total : Float?
     private var billingAmt : String
@@ -24,7 +24,7 @@ class Order : IDisplay
             for  (quantity,product) in  products
             {
                 temp = temp  +  (Float(quantity) * (product.quantity!))
-                print("\(String(describing: product.p_name!))      original_price : $\(product.price!)  quantity \(quantity)  price : $\(Float(quantity) * (product.quantity!)) ")
+                print("\(String(describing: product.p_name!)),  manufacturer : \(product.name!),   original_price : $\(product.price!),  quantity \(quantity),  price : $\(Float(quantity) * (product.quantity!)) ")
             }
             let tax = (temp*13)/100
             print("TAX 13% HST : \(temp)")
@@ -55,6 +55,7 @@ class Order : IDisplay
 //    }
     
     func display( )  {
+        print("order number : ", self.o_id!)
         print("order placed on : ", self.date)
         print(billingAmt)
         

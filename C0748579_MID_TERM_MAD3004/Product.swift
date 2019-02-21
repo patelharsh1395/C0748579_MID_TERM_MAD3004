@@ -31,7 +31,9 @@ class Product : Manufacturer
     
     
     
-    
+    override func display() {
+        print("Product name :  \(p_name!), product price : \(price!), quantity_per_price : \(quantity!) Kg , manufacturer : \(self.name!)  ")
+    }
     
     
     

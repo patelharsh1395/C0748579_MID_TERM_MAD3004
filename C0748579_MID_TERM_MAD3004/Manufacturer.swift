@@ -9,8 +9,10 @@
 import Foundation
 
 
-class Manufacturer
+class Manufacturer : IDisplay
 {
+    
+    
     var id : Int?
     var name : String?
     
@@ -25,6 +27,10 @@ class Manufacturer
     init(manufacturer : Manufacturer) {
         self.id = manufacturer.id!
         self.name = manufacturer.name!
+    }
+    
+    func display() {
+        print("Manufacturer name : \(name!) ")
     }
     
 }

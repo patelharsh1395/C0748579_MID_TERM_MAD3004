@@ -11,9 +11,32 @@ import Foundation
 
 class Order
 {
+    
+    
+    
+    
+    
+    
+    
     var o_id : Int?
-    var date : String?
+    var date = Date()
     var products = [Product]()
     var total : Float?
+    
+    
+    init() {
+        
+    }
+    init(o_id : Int) {
+        self.o_id = o_id
+    }
+    
+    func productAdd(products : Product)
+    {
+        self.products.append(products)
+    }
+   
+    
+    
     
 }

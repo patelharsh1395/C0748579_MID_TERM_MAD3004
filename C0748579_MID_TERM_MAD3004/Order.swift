@@ -30,7 +30,10 @@ class Order
         self.quantity_order = quantity_order
     }
    
-    
+    func billingInfo()
+    {
+        
+    }
     
     
     

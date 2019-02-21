@@ -35,9 +35,9 @@ order2.productAdd(products: Carrot,quantity_order:  5)
 
 
 var order3 = Order( o_id: 3)
-order3.productAdd(products: Banana, quantity_order: 1)
-order3.productAdd(products: orange , quantity_order: 3)
-order3.productAdd(products: Tomato, quantity_order:  2)
-order3.productAdd(products: orange , quantity_order: 4)
+order3.productAdd(products: radish,quantity_order: 1)
+order3.productAdd(products: onion,quantity_order: 4)
+order3.productAdd(products: Carrot,quantity_order:  5)
+
 
 

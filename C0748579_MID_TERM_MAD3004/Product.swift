@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Product
+class Product : Manufacturer
 {
     var p_id : Int?
     var p_name : String?
@@ -17,14 +17,16 @@ class Product
     var quantity : Float?
     
     
-    init() {
-        
+    override init() {
+        super.init()
     }
-    init(p_id: Int, p_name : String , price : Float , quantity : Float) {
+    init(p_id: Int, p_name : String , price : Float , quantity : Float , manufacturer : Manufacturer) {
+        super.init(manufacturer : manufacturer)
         self.p_id = p_id
         self.p_name = p_name
         self.price = price
         self.quantity = quantity
+        
     }
     
     

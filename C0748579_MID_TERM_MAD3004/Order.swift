@@ -13,9 +13,20 @@ class Order
 {
     var o_id : Int?
     var date = Date()
-    var products = [Product]()
+    var products = [Int:Product]()
     var total : Float?
-    var quantity_order : Int?
+    var billingAmt : Float
+    {
+        get{
+            var temp : Float = 0.0
+            for  (quantity,product) in  products
+            {
+                temp = temp  +  (Float(quantity) * (product.quantity!))
+                print("\(String(describing: product.p_name!))   quantity \(quantity)  price : \(Float(quantity) * (product.quantity!)) ")
+            }
+            return temp
+        }
+    }
     
     init() {
         
@@ -26,14 +37,18 @@ class Order
     
     func productAdd(products : Product , quantity_order : Int )
     {
-        self.products.append(products)
-        self.quantity_order = quantity_order
+       self.products.updateValue( products , forKey: quantity_order)
     }
    
-    func billingInfo()
-    {
-        
-    }
+//    func billingInfo() -> Float
+//    {
+//        for  (quantity,product) in  products
+//        {
+//            billingAmt = billingAmt +  (Float(quantity) * (product.quantity!))
+//        }
+//
+//        return billingAmt
+//    }
     
     
     

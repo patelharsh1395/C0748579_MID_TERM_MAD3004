@@ -14,4 +14,17 @@ class Manufacturer
     var id : Int?
     var name : String?
     
+    
+    init() {
+    }
+    init(id : Int, name : String) {
+        self.id = id
+        self.name = name
+
+    }
+    init(manufacturer : Manufacturer) {
+        self.id = manufacturer.id!
+        self.name = manufacturer.name!
+    }
+    
 }

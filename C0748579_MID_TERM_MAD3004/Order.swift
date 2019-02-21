@@ -23,7 +23,7 @@ class Order : IDisplay
             var temp : Float = 0.0
             for  (quantity,product) in  products
             {
-                temp = temp  +  (Float(quantity) * (product.quantity!))
+                temp = temp  +  (Float(quantity) * (product.price!))
                 print("\(String(describing: product.p_name!)),  manufacturer : \(product.name!),   original_price : $\(product.price!),  quantity \(quantity),  price : $\(Float(quantity) * (product.price!)) ")
             }
             let tax = (temp*13)/100

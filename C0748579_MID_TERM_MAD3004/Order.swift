@@ -24,7 +24,7 @@ class Order : IDisplay
             for  (quantity,product) in  products
             {
                 temp = temp  +  (Float(quantity) * (product.quantity!))
-                print("\(String(describing: product.p_name!)),  manufacturer : \(product.name!),   original_price : $\(product.price!),  quantity \(quantity),  price : $\(Float(quantity) * (product.quantity!)) ")
+                print("\(String(describing: product.p_name!)),  manufacturer : \(product.name!),   original_price : $\(product.price!),  quantity \(quantity),  price : $\(Float(quantity) * (product.price!)) ")
             }
             let tax = (temp*13)/100
             print("TAX 13% HST : \(temp)")
